@@ -109,9 +109,10 @@ public class MainActivity extends AppCompatActivity {
 
 ## OUTPUT
 
-![Screenshot_20240917_134520](https://github.com/user-attachments/assets/ec63801f-8c17-4f14-a8e7-668795bb143c)
-![Screenshot_20240917_134610](https://github.com/user-attachments/assets/e6810fbe-f772-4500-9558-34bc1e834ec8)
-![Screenshot 2024-09-17 134638](https://github.com/user-attachments/assets/36c956fe-1df2-4e07-9011-cdb2e0619cfe)
+
+![image](https://github.com/user-attachments/assets/f0404fe8-4029-45c4-9e4f-06595f23c75e)
+![image](https://github.com/user-attachments/assets/9cd8b82d-9d85-45fd-bd65-14fb13a82559)
+![Screenshot 2024-09-17 134638](https://github.com/user-attachments/assets/36c956fe-1df2-4e07-9011-cdb2e0619cfe)\
 
 
 ## RESULT
