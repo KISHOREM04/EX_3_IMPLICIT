@@ -10,20 +10,108 @@ Latest Version Android Studio
 
 ## ALGORITHM:
 
+Step 1: Open Android Stdio and then click on File -> New -> New project.
+
+Step 2: Then type the Application name as implicitintent and click Next.
+
+Step 3: Then select the Minimum SDK as shown below and click Next.
+
+Step 4: Then select the Empty Activity and click Next. Finally click Finish.
+
+Step 5: Design layout in activity_main.xml.
+
+Step 6: Type any url, click navigate and that will take you to the expected url.
+
+Step 7: Save and run the application.
 
 
 ## PROGRAM:
 ```
-/*
 Program to print the text “Implicitintent”.
-Developed by:
-Registeration Number :
-*/
+Developed by: KISHORE M
+Registeration Number : 212222040079
+
+```
+## MainActivity.java:
+```
+package com.example.ex3;
+import android.support.v7.app.AppCompatActivity;
+import android.content.Intent;
+import android.net.Uri;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        final EditText editText = findViewById(R.id.urlText);
+        Button btn = findViewById(R.id.btnNavigate);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String url = editText.getText().toString();
+                if (url.isEmpty()) {
+                    editText.setError("Please enter a URL");
+                    return;
+                }
+
+                // Check if the URL starts with "http://" or "https://"
+                if (!url.startsWith("http://") && !url.startsWith("https://")) {
+                    url = "http://" + url; // Default to http if no protocol is specified
+                }
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                // Verify that there is at least one app that can handle this intent
+                if (intent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(intent);
+                } else {
+                    editText.setError("No application can handle this request.");
+                }
+            }
+        });
+    }
+}
+```
+## activitymain.xml:
+```
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/urlText"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:ems="10" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnNavigate"
+        android:layout_below="@+id/urlText"
+        android:text="Navigate"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
 ```
 
 ## OUTPUT
 
-
+![Screenshot_20240917_134520](https://github.com/user-attachments/assets/ec63801f-8c17-4f14-a8e7-668795bb143c)
+![Screenshot_20240917_134610](https://github.com/user-attachments/assets/e6810fbe-f772-4500-9558-34bc1e834ec8)
+![Screenshot 2024-09-17 134638](https://github.com/user-attachments/assets/36c956fe-1df2-4e07-9011-cdb2e0619cfe)
 
 
 ## RESULT
